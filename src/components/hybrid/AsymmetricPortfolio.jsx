@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, DollarSign, Flower2, Brain, UtensilsCrossed, Bus, Video } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AsymmetricPortfolio() {
@@ -9,12 +9,12 @@ export default function AsymmetricPortfolio() {
   const isRTL = currentLanguage === 'ar';
 
   const projects = [
-    { title: "Evest Ramadan", category: "Campaign", size: "large", emoji: "💰" },
-    { title: "FIT Products", category: "Branding", size: "small", emoji: "🌸" },
-    { title: "SCD Awareness", category: "Social", size: "small", emoji: "🧠" },
-    { title: "Al Qaser", category: "Restaurant", size: "medium", emoji: "🍽️" },
-    { title: "Grand Nablus", category: "Transport", size: "medium", emoji: "🚌" },
-    { title: "Product Launch", category: "Video", size: "large", emoji: "🎬" }
+    { title: "Evest Ramadan", category: "Campaign", size: "large", icon: DollarSign },
+    { title: "FIT Products", category: "Branding", size: "small", icon: Flower2 },
+    { title: "SCD Awareness", category: "Social", size: "small", icon: Brain },
+    { title: "Al Qaser", category: "Restaurant", size: "medium", icon: UtensilsCrossed },
+    { title: "Grand Nablus", category: "Transport", size: "medium", icon: Bus },
+    { title: "Product Launch", category: "Video", size: "large", icon: Video }
   ];
 
   return (
@@ -52,9 +52,7 @@ export default function AsymmetricPortfolio() {
                 <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 aspect-video">
                   {/* Background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-light-gray to-background flex items-center justify-center">
-                    <div className="text-9xl opacity-10">
-                      {project.emoji}
-                    </div>
+                    <project.icon className="w-64 h-64 opacity-10 text-foreground" />
                   </div>
 
                   {/* Dark Overlay on Hover */}

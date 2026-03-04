@@ -100,9 +100,9 @@ export const clientsData = [
     slug: "hulk-burger",
     title: "Hulk Burger",
     description:
-      "At 255, the Creativity Factory, we turn power into art with HULK!🔥 \nWe're proud of our partnership with Hulk Burger Palestine, leading their digital marketing, advertising campaigns, visual branding, as well as content creation, photography, and video production",
+      "At 255, the Creativity Factory, we turn power into art with HULK! \nWe're proud of our partnership with Hulk Burger Palestine, leading their digital marketing, advertising campaigns, visual branding, as well as content creation, photography, and video production",
     descriptionAr:
-      "HULK! في 255 مصنع الإبداع، نحول القوة إلى فن مع 🔥 \nنفتخر بشراكتنا مع سلسلة مطاعم Hulk Burger حيث نقود إدارة التسويق الرقمي، والحملات الإعلانية، والهوية البصرية، بالإضافة إلى بناء المحتوى، والتصوير، والمونتاج",
+      "HULK! في 255 مصنع الإبداع، نحول القوة إلى فن مع \nنفتخر بشراكتنا مع سلسلة مطاعم Hulk Burger حيث نقود إدارة التسويق الرقمي، والحملات الإعلانية، والهوية البصرية، بالإضافة إلى بناء المحتوى، والتصوير، والمونتاج",
   },
   {
     slug: "akko-group",

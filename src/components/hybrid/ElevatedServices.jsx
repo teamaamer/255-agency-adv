@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Smartphone, Video, Camera, BarChart3, Palette, PartyPopper } from 'lucide-react';
 
 export default function ElevatedServices() {
   const { t, currentLanguage } = useLanguage();
@@ -13,32 +14,32 @@ export default function ElevatedServices() {
     {
       title: t.services?.socialMedia || "Social Media Management",
       description: "Strategic content and community building",
-      emoji: "📱"
+      icon: Smartphone
     },
     {
       title: "Video Production",
       description: "Cinematic storytelling that converts",
-      emoji: "🎬"
+      icon: Video
     },
     {
       title: "Photography",
       description: "Visual narratives that captivate",
-      emoji: "📸"
+      icon: Camera
     },
     {
       title: "Marketing & Strategy",
       description: "Data-driven growth planning",
-      emoji: "📊"
+      icon: BarChart3
     },
     {
       title: "Print Design",
       description: "Tangible brand experiences",
-      emoji: "🎨"
+      icon: Palette
     },
     {
       title: "Events & Activations",
       description: "Immersive brand moments",
-      emoji: "🎪"
+      icon: PartyPopper
     }
   ];
 
@@ -85,8 +86,8 @@ export default function ElevatedServices() {
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-500">
-                    {service.emoji}
+                  <div className="mb-6 group-hover:scale-110 transition-transform duration-500">
+                    <service.icon className="w-16 h-16 text-primary" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
                     {service.title}

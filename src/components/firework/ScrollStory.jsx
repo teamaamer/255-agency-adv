@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { BarChart3, Target, PartyPopper } from 'lucide-react';
 
 export default function ScrollStory() {
   const { t, currentLanguage } = useLanguage();
@@ -73,10 +74,10 @@ function StorySection({ story, index, isRTL }) {
             className={`hidden lg:block ${isRTL ? 'lg:order-1' : ''}`}
           >
             <div className="aspect-video bg-dark-gray/50 backdrop-blur-sm border border-white/10 rounded-lg overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center text-white/20 text-6xl">
-                {index === 0 && '📊'}
-                {index === 1 && '🎯'}
-                {index === 2 && '🎪'}
+              <div className="w-full h-full flex items-center justify-center text-white/20">
+                {index === 0 && <BarChart3 className="w-48 h-48" />}
+                {index === 1 && <Target className="w-48 h-48" />}
+                {index === 2 && <PartyPopper className="w-48 h-48" />}
               </div>
             </div>
           </motion.div>

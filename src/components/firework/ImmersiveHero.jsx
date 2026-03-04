@@ -117,11 +117,11 @@ export default function ImmersiveHero() {
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="relative"
+                className="relative w-[20rem] h-[20rem] opacity-10 filter blur-sm"
               >
-                <div className="text-[20rem] opacity-10 filter blur-sm">
-                  🐪
-                </div>
+                <svg viewBox="0 0 100 100" className="w-full h-full" fill="currentColor">
+                  <path d="M20,60 Q20,40 30,35 L35,30 Q40,25 45,30 L50,35 Q55,30 60,35 L65,40 Q70,35 75,40 L75,60 Q75,70 70,75 L30,75 Q25,70 25,60 Z M35,45 Q35,42 37,42 Q39,42 39,45 Q39,47 37,47 Q35,47 35,45 Z M61,45 Q61,42 63,42 Q65,42 65,45 Q65,47 63,47 Q61,47 61,45 Z" />
+                </svg>
               </motion.div>
             </motion.div>
           </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, DollarSign, Flower2, Brain, UtensilsCrossed, Bus, Video } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function CinematicPortfolio() {
@@ -13,37 +13,37 @@ export default function CinematicPortfolio() {
       title: "Evest Ramadan Campaign",
       category: "Campaign",
       size: "large",
-      emoji: "💰"
+      icon: DollarSign
     },
     { 
       title: "FIT Feminine Products",
       category: "Branding",
       size: "medium",
-      emoji: "🌸"
+      icon: Flower2
     },
     { 
       title: "SCD Awareness",
       category: "Campaign",
       size: "medium",
-      emoji: "🧠"
+      icon: Brain
     },
     { 
       title: "Al Qaser Restaurant",
       category: "Brand Identity",
       size: "large",
-      emoji: "🍽️"
+      icon: UtensilsCrossed
     },
     { 
       title: "Grand Nablus Bus",
       category: "Transportation",
       size: "medium",
-      emoji: "🚌"
+      icon: Bus
     },
     { 
       title: "Product Launch",
       category: "Video Production",
       size: "medium",
-      emoji: "🎬"
+      icon: Video
     }
   ];
 
@@ -81,9 +81,7 @@ export default function CinematicPortfolio() {
               }`}>
                 {/* Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-background flex items-center justify-center">
-                  <div className="text-9xl opacity-20">
-                    {project.emoji}
-                  </div>
+                  <project.icon className="w-64 h-64 opacity-20 text-white" />
                 </div>
 
                 {/* Overlay */}

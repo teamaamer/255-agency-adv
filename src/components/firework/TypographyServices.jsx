@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { BarChart3, Palette, Rocket, Monitor, PartyPopper, Video } from 'lucide-react';
 
 export default function TypographyServices() {
   const { t, currentLanguage } = useLanguage();
@@ -13,32 +14,32 @@ export default function TypographyServices() {
     { 
       title: t.services?.socialMedia || "STRATEGY",
       description: "Data-driven planning and market positioning",
-      emoji: "📊"
+      icon: BarChart3
     },
     { 
       title: "BRANDING",
       description: "Visual identity and brand systems",
-      emoji: "🎨"
+      icon: Palette
     },
     { 
       title: "CAMPAIGNS",
       description: "Integrated creative execution",
-      emoji: "🚀"
+      icon: Rocket
     },
     { 
       title: "DIGITAL",
       description: "Web and app experiences",
-      emoji: "💻"
+      icon: Monitor
     },
     { 
       title: "ACTIVATIONS",
       description: "Immersive brand experiences",
-      emoji: "🎪"
+      icon: PartyPopper
     },
     { 
       title: "PRODUCTION",
       description: "Video and content creation",
-      emoji: "🎬"
+      icon: Video
     }
   ];
 
@@ -89,9 +90,10 @@ export default function TypographyServices() {
                 transition={{ duration: 0.5 }}
                 className="aspect-square bg-gradient-to-br from-dark-gray to-background border border-white/10 rounded-lg overflow-hidden flex items-center justify-center"
               >
-                <div className="text-9xl opacity-20">
-                  {services[activeService].emoji}
-                </div>
+                {(() => {
+                  const Icon = services[activeService].icon;
+                  return <Icon className="w-64 h-64 opacity-20 text-white" />;
+                })()}
               </motion.div>
             </div>
           </div>

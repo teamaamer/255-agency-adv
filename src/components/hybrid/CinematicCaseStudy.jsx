@@ -1,8 +1,7 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Flower2, DollarSign } from 'lucide-react';
 
 export default function CinematicCaseStudy() {
   const { currentLanguage } = useLanguage();
@@ -18,7 +17,7 @@ export default function CinematicCaseStudy() {
         { label: "Reach", value: "2.5M" },
         { label: "Conversions", value: "+180%" }
       ],
-      emoji: "🌸"
+      icon: Flower2
     },
     {
       title: "Financial Campaign Excellence",
@@ -29,7 +28,7 @@ export default function CinematicCaseStudy() {
         { label: "Engagement", value: "+250%" },
         { label: "ROI", value: "4.2x" }
       ],
-      emoji: "💰"
+      icon: DollarSign
     }
   ];
 
@@ -43,43 +42,13 @@ export default function CinematicCaseStudy() {
 }
 
 function CaseStudySection({ study, index, isRTL }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-
-  const backgroundColor = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    ["#f4f2ee", "#1a1a1a", "#f4f2ee"]
-  );
-
-  const textColor = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    ["#1a1a1a", "#ffffff", "#1a1a1a"]
-  );
-
   return (
-    <motion.div
-      ref={ref}
-      style={{ backgroundColor }}
-      className="py-32"
-    >
+    <div className="py-32 bg-background">
       <div className="container mx-auto px-6 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Content */}
-          <motion.div
-            style={{ color: textColor }}
-            className={isRTL ? 'lg:order-2 text-right' : 'text-left'}
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
+          <div className={isRTL ? 'lg:order-2 text-right' : 'text-left'}>
+            <div>
               <div className="text-sm uppercase tracking-widest mb-4 opacity-60">
                 Case Study {index + 1}
               </div>
@@ -96,41 +65,27 @@ function CaseStudySection({ study, index, isRTL }) {
               {/* Results */}
               <div className="grid grid-cols-3 gap-8">
                 {study.results.map((result, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                  >
+                  <div key={idx}>
                     <div className="text-4xl font-black mb-2">
                       {result.value}
                     </div>
                     <div className="text-sm uppercase tracking-wider opacity-60">
                       {result.label}
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Right - Media Block */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className={isRTL ? 'lg:order-1' : ''}
-          >
+          <div className={isRTL ? 'lg:order-1' : ''}>
             <div className="aspect-video bg-gradient-to-br from-primary/20 to-background rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center border border-white/10">
-              <div className="text-9xl opacity-30">
-                {study.emoji}
-              </div>
+              <study.icon className="w-64 h-64 opacity-30 text-primary" />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
